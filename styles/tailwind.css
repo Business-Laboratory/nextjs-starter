@@ -6,7 +6,9 @@
 
 body {
   /* by default we want font-body */
-  @apply font-body;
+  @apply font-body; /*TODO: make sure this is working or if it needs to be moved*/
+  /* prevent the whole page from scrolling, since only the sidebar will scroll */
+  overflow: hidden;
 }
 
 @tailwind components;
