@@ -1,3 +1,66 @@
 @tailwind base;
+
+/* I just added all of the styles, we may need to narrow this down */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  /* by default we want font-body */
+  @apply font-body;
+}
+
 @tailwind components;
+
+.header1 {
+  @apply font-display font-bold text-6xl;
+}
+
+.header2 {
+  @apply font-display font-semibold text-5xl;
+}
+
+.header3 {
+  @apply font-display font-medium text-4xl;
+}
+
+.header4 {
+  @apply font-display font-normal text-3xl;
+}
+
+.header5 {
+  @apply font-display font-light text-2xl;
+}
+
+.header6 {
+  @apply font-display font-thin text-xl;
+}
+
+.bodyLarge {
+  @apply font-body font-light text-sm;
+}
+
+@screen md {
+  .bodyLarge {
+    @apply font-body font-normal text-base;
+  }
+}
+
+@screen lg {
+  .bodyLarge {
+    @apply font-body font-medium text-lg;
+  }
+}
+
+.bodyBase {
+  @apply font-body font-normal text-base;
+}
+
+.bodySmall {
+  @apply font-body font-light text-sm;
+}
+
+.label {
+  @apply font-body font-normal text-xs;
+}
+
 @tailwind utilities;
