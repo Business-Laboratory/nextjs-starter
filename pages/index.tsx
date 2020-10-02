@@ -32,7 +32,7 @@ export default function Home() {
 
       <div className='flex-1 flex flex-row overflow-hidden'>
         {showSidebar ? (
-          <Sidebar className='space-y-8 text-white pl-4 pt-2'>
+          <Sidebar className='space-y-8 text-gray-yellow-100 pl-4 pt-2'>
             <p>Content</p>
             <p>Content</p>
             <p>Content</p>
@@ -96,7 +96,11 @@ export default function Home() {
   )
 }
 
-function Header({ className, children }) {
+type HeaderProps = {
+  className?: string
+  children?: React.ReactNode
+}
+function Header({ className, children }: HeaderProps) {
   return (
     <header
       className={clsx(
@@ -110,15 +114,16 @@ function Header({ className, children }) {
 }
 
 // taken from https://heroicons.com/
-function HamburgerIcon(props) {
+function HamburgerIcon(props: React.SVGAttributes<SVGElement>) {
+  const { className, ...rest } = props
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
       fill='none'
       viewBox='0 0 24 24'
       stroke='currentColor'
-      className='w-6 h-6 text-gray-red-100'
-      {...props}
+      className={clsx('w-6 h-6 text-gray-red-100', className)}
+      {...rest}
     >
       <path
         strokeLinecap='round'
@@ -129,15 +134,16 @@ function HamburgerIcon(props) {
     </svg>
   )
 }
-function CloseIcon(props) {
+function CloseIcon(props: React.SVGAttributes<SVGElement>) {
+  const { className, ...rest } = props
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
       fill='none'
       viewBox='0 0 24 24'
       stroke='currentColor'
-      className='w-6 h-6 text-gray-red-100'
-      {...props}
+      className={clsx('w-6 h-6 text-gray-red-100', className)}
+      {...rest}
     >
       <path
         strokeLinecap='round'
@@ -149,7 +155,11 @@ function CloseIcon(props) {
   )
 }
 
-function Main({ className, children }) {
+type MainProps = {
+  className?: string
+  children?: React.ReactNode
+}
+function Main({ className, children }: MainProps) {
   return (
     <main
       className={clsx('flex-1 overflow-x-hidden overflow-y-auto', className)}
@@ -159,11 +169,15 @@ function Main({ className, children }) {
   )
 }
 
-function Sidebar({ className, children }) {
+type SidebarProps = {
+  className?: string
+  children?: React.ReactNode
+}
+function Sidebar({ className, children }: SidebarProps) {
   return (
     <aside
       className={clsx(
-        'static h-screen inset-y-0 left-0 w-64 bg-gray-900 overflow-y-auto',
+        'static h-screen inset-y-0 left-0 w-64 bg-matisse-blue-400 overflow-y-auto',
         className
       )}
     >
@@ -172,6 +186,10 @@ function Sidebar({ className, children }) {
   )
 }
 
-function Footer({ children }) {
-  return <footer>{children}</footer>
+type FooterProps = {
+  className?: string
+  children?: React.ReactNode
+}
+function Footer({ className, children }: FooterProps) {
+  return <footer className={className}>{children}</footer>
 }
