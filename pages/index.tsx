@@ -1,10 +1,13 @@
 import clsx from 'clsx'
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+/** @jsx jsx */
+import { jsx, css } from '@emotion/core'
 
 export default function Home() {
   const [showSidebar, setShowSidebar] = useState(false)
+
   return (
     <div className='flex flex-col h-screen'>
       <Head>
@@ -31,8 +34,8 @@ export default function Home() {
       </Header>
 
       <div className='flex-1 flex flex-row overflow-hidden'>
-        {showSidebar ? (
-          <Sidebar className='space-y-8 text-gray-yellow-100 pl-4 pt-2'>
+        <Sidebar showSidebar={showSidebar}>
+          <div className='space-y-8 text-gray-yellow-100 pl-4 pt-2'>
             <p>Content</p>
             <p>Content</p>
             <p>Content</p>
@@ -57,8 +60,8 @@ export default function Home() {
             <p>Content</p>
             <p>Content</p>
             <p>Content</p>
-          </Sidebar>
-        ) : null}
+          </div>
+        </Sidebar>
 
         <Main>
           <article>
@@ -170,16 +173,37 @@ function Main({ className, children }: MainProps) {
 }
 
 type SidebarProps = {
+  showSidebar: boolean
   className?: string
   children?: React.ReactNode
 }
-function Sidebar({ className, children }: SidebarProps) {
+type AnimationStatus = 'closing' | 'closed' | 'open'
+function Sidebar({ showSidebar, className, children }: SidebarProps) {
+  const [animationStatus, setAnimationStatus] = useState<AnimationStatus>(() =>
+    showSidebar ? 'open' : 'closed'
+  )
+
+  useEffect(() => {
+    setAnimationStatus(showSidebar ? 'open' : 'closing')
+  }, [showSidebar])
+
   return (
     <aside
+      css={css`
+        width: 16rem;
+        margin-left: ${showSidebar ? 0 : -16}rem;
+        transition: margin-left 0.5s ease-in-out;
+        visibility: ${animationStatus === 'closed' ? 'hidden' : 'visible'};
+      `}
       className={clsx(
-        'static h-screen inset-y-0 left-0 w-64 bg-matisse-blue-400 overflow-y-auto',
+        'static h-screen inset-y-0 left-0 bg-matisse-blue-400 overflow-y-auto',
         className
       )}
+      onTransitionEnd={() => {
+        if (animationStatus === 'closing') {
+          setAnimationStatus('closed')
+        }
+      }}
     >
       {children}
     </aside>
