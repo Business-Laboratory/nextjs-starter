@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { css } from '@emotion/react'
 
 export default function Home() {
   const [showSidebar, setShowSidebar] = useState(false)
@@ -187,12 +188,12 @@ function Sidebar({ showSidebar, className, children }: SidebarProps) {
 
   return (
     <aside
-      // css={css`
-      //   width: 16rem;
-      //   margin-left: ${showSidebar ? 0 : -16}rem;
-      //   transition: margin-left 0.5s ease-in-out;
-      //   visibility: ${animationStatus === 'closed' ? 'hidden' : 'visible'};
-      // `}
+      css={css`
+        width: 16rem;
+        margin-left: ${showSidebar ? 0 : -16}rem;
+        transition: margin-left 0.5s ease-in-out;
+        visibility: ${animationStatus === 'closed' ? 'hidden' : 'visible'};
+      `}
       className={clsx(
         'static h-screen inset-y-0 left-0 bg-matisse-blue-400 overflow-y-auto',
         className
