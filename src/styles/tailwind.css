@@ -13,32 +13,44 @@ body {
 
 @tailwind components;
 
-.header1 {
-  @apply font-display font-bold text-6xl;
+.bl-text-6xl {
+  @apply text-6xl font-bold font-display;
 }
 
-.header2 {
-  @apply font-display font-semibold text-5xl;
+.bl-text-5xl {
+  @apply text-5xl font-semibold font-display;
 }
 
-.header3 {
-  @apply font-display font-medium text-4xl;
+.bl-text-4xl {
+  @apply text-4xl font-medium font-display;
 }
 
-.header4 {
-  @apply font-display font-normal text-3xl;
+.bl-text-3xl {
+  @apply text-3xl font-normal font-display;
 }
 
-.header5 {
-  @apply font-display font-light text-2xl;
+.bl-text-2xl {
+  @apply text-2xl font-light font-display;
 }
 
-.header6 {
-  @apply font-display font-thin text-xl;
+.bl-text-xl {
+  @apply text-xl font-extralight font-display;
 }
 
-.bodyLarge {
-  @apply font-body font-light text-sm;
+.bl-text-lg {
+  @apply text-lg font-medium font-body;
+}
+
+.bl-text-base {
+  @apply text-base font-normal font-body;
+}
+
+.bl-text-sm {
+  @apply text-sm font-light font-body;
+}
+
+.bl-text-xs {
+  @apply text-xs font-normal font-body;
 }
 
 @screen md {
@@ -51,18 +63,6 @@ body {
   .bodyLarge {
     @apply font-body font-medium text-lg;
   }
-}
-
-.bodyBase {
-  @apply font-body font-normal text-base;
-}
-
-.bodySmall {
-  @apply font-body font-light text-sm;
-}
-
-.label {
-  @apply font-body font-normal text-xs;
 }
 
 @tailwind utilities;
