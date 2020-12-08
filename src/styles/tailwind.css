@@ -53,16 +53,4 @@ body {
   @apply text-xs font-normal font-body;
 }
 
-@screen md {
-  .bodyLarge {
-    @apply font-body font-normal text-base;
-  }
-}
-
-@screen lg {
-  .bodyLarge {
-    @apply font-body font-medium text-lg;
-  }
-}
-
 @tailwind utilities;
