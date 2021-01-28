@@ -8,7 +8,7 @@ export default function Home() {
   const [showSidebar, setShowSidebar] = useState(false)
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen bg-gray-yellow-100">
       <Head>
         <title>Layout examples</title>
       </Head>
@@ -25,7 +25,7 @@ export default function Home() {
           )}
         </button>
         <Link href="/">
-          <a className="ml-2 text-2xl font-bold font-display text-gray-red-100">
+          <a className="ml-2 text-2xl font-bold font-display text-gray-yellow-100">
             Home
           </a>
         </Link>
@@ -34,7 +34,7 @@ export default function Home() {
 
       <div className="flex flex-row flex-1 overflow-hidden">
         <Sidebar showSidebar={showSidebar}>
-          <div className="pt-2 pl-4 space-y-8 text-gray-yellow-100">
+          <div className="pt-2 pl-4 space-y-8 text-gray-yellow-300 bl-text-xl">
             <p>Content</p>
             <p>Content</p>
             <p>Content</p>
@@ -64,7 +64,7 @@ export default function Home() {
 
         <Main>
           <article>
-            <section className="pt-2 pl-4 space-y-8">
+            <section className="pt-2 pl-4 space-y-8 text-gray-yellow-600 bl-text-lg">
               <p>Content</p>
               <p>Content</p>
               <p>Content</p>
@@ -91,7 +91,9 @@ export default function Home() {
               <p>Content</p>
             </section>
           </article>
-          <Footer>Hi, I'm the footer</Footer>
+          <Footer className={'text-gray-yellow-600 bl-text-base'}>
+            Hi, I'm the footer
+          </Footer>
         </Main>
       </div>
     </div>
@@ -106,7 +108,7 @@ function Header({ className, children }: HeaderProps) {
   return (
     <header
       className={clsx(
-        'w-full h-12 flex flex-row items-center bg-copper-400',
+        'w-full h-12 flex flex-row items-center bg-gray-yellow-500',
         className
       )}
     >
@@ -124,7 +126,7 @@ function HamburgerIcon(props: React.SVGAttributes<SVGElement>) {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      className={clsx('w-6 h-6 text-gray-red-100', className)}
+      className={clsx('w-6 h-6 text-gray-yellow-100', className)}
       {...rest}
     >
       <path
@@ -144,7 +146,7 @@ function CloseIcon(props: React.SVGAttributes<SVGElement>) {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      className={clsx('w-6 h-6 text-gray-red-100', className)}
+      className={clsx('w-6 h-6 text-gray-yellow-100', className)}
       {...rest}
     >
       <path
@@ -195,7 +197,7 @@ function Sidebar({ showSidebar, className, children }: SidebarProps) {
         visibility: ${animationStatus === 'closed' ? 'hidden' : 'visible'};
       `}
       className={clsx(
-        'static h-screen inset-y-0 left-0 bg-matisse-blue-400 overflow-y-auto',
+        'static h-screen inset-y-0 left-0 bg-gray-yellow-600 overflow-y-auto',
         className
       )}
       onTransitionEnd={() => {
