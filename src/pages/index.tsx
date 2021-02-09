@@ -1,23 +1,19 @@
-import clsx from 'clsx'
+import tw, { css } from 'twin.macro'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { css } from '@emotion/react'
 
 export default function Home() {
   const [showSidebar, setShowSidebar] = useState(false)
 
   return (
-    <div className="flex flex-col h-screen bg-gray-yellow-100">
+    <div tw="flex flex-col h-screen bg-gray-yellow-100">
       <Head>
         <title>Layout examples</title>
       </Head>
 
       <Header>
-        <button
-          className="ml-2"
-          onClick={() => setShowSidebar((prev) => !prev)}
-        >
+        <button tw="ml-2" onClick={() => setShowSidebar((prev) => !prev)}>
           {showSidebar ? (
             <CloseIcon aria-label="Close sidebar" />
           ) : (
@@ -25,16 +21,16 @@ export default function Home() {
           )}
         </button>
         <Link href="/">
-          <a className="ml-2 text-2xl font-bold font-display text-gray-yellow-100">
+          <a tw="ml-2 text-2xl font-bold font-display text-gray-yellow-100">
             Home
           </a>
         </Link>
         {/* TODO: add avatar */}
       </Header>
 
-      <div className="flex flex-row flex-1 overflow-hidden">
+      <div tw="flex flex-row flex-1 overflow-hidden">
         <Sidebar showSidebar={showSidebar}>
-          <div className="pt-2 pl-4 space-y-8 text-gray-yellow-300 bl-text-xl">
+          <div tw="pt-2 pl-4 space-y-8 text-gray-yellow-300 bl-text-xl">
             <p>Content</p>
             <p>Content</p>
             <p>Content</p>
@@ -64,7 +60,7 @@ export default function Home() {
 
         <Main>
           <article>
-            <section className="pt-2 pl-4 space-y-8 text-gray-yellow-600 bl-text-lg">
+            <section tw="pt-2 pl-4 space-y-8 text-gray-yellow-600 bl-text-lg">
               <p>Content</p>
               <p>Content</p>
               <p>Content</p>
@@ -91,7 +87,7 @@ export default function Home() {
               <p>Content</p>
             </section>
           </article>
-          <Footer className={'text-gray-yellow-600 bl-text-base'}>
+          <Footer tw="text-gray-yellow-600 bl-text-base">
             Hi, I'm the footer
           </Footer>
         </Main>
@@ -107,10 +103,8 @@ type HeaderProps = {
 function Header({ className, children }: HeaderProps) {
   return (
     <header
-      className={clsx(
-        'w-full h-12 flex flex-row items-center bg-gray-yellow-500',
-        className
-      )}
+      tw="w-full h-12 flex flex-row items-center bg-gray-yellow-500"
+      className={className}
     >
       {children}
     </header>
@@ -119,15 +113,14 @@ function Header({ className, children }: HeaderProps) {
 
 // taken from https://heroicons.com/
 function HamburgerIcon(props: React.SVGAttributes<SVGElement>) {
-  const { className, ...rest } = props
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      className={clsx('w-6 h-6 text-gray-yellow-100', className)}
-      {...rest}
+      tw="w-6 h-6 text-gray-yellow-100"
+      {...props}
     >
       <path
         strokeLinecap="round"
@@ -139,15 +132,14 @@ function HamburgerIcon(props: React.SVGAttributes<SVGElement>) {
   )
 }
 function CloseIcon(props: React.SVGAttributes<SVGElement>) {
-  const { className, ...rest } = props
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
-      className={clsx('w-6 h-6 text-gray-yellow-100', className)}
-      {...rest}
+      tw="w-6 h-6 text-gray-yellow-100"
+      {...props}
     >
       <path
         strokeLinecap="round"
@@ -165,9 +157,7 @@ type MainProps = {
 }
 function Main({ className, children }: MainProps) {
   return (
-    <main
-      className={clsx('flex-1 overflow-x-hidden overflow-y-auto', className)}
-    >
+    <main tw="flex-1 overflow-x-hidden overflow-y-auto" className={className}>
       {children}
     </main>
   )
@@ -190,16 +180,15 @@ function Sidebar({ showSidebar, className, children }: SidebarProps) {
 
   return (
     <aside
-      css={css`
-        width: 16rem;
-        margin-left: ${showSidebar ? 0 : -16}rem;
-        transition: margin-left 0.5s ease-in-out;
-        visibility: ${animationStatus === 'closed' ? 'hidden' : 'visible'};
-      `}
-      className={clsx(
-        'static h-screen inset-y-0 left-0 bg-gray-yellow-600 overflow-y-auto',
-        className
-      )}
+      css={[
+        tw`static inset-y-0 left-0 w-64 h-screen overflow-y-auto bg-gray-yellow-600`,
+        showSidebar ? tw`ml-0` : tw`-ml-64`,
+        animationStatus === 'closed' ? tw`invisible` : tw`visible`,
+        css`
+          transition: margin-left 0.5s ease-in-out;
+        `,
+      ]}
+      className={className}
       onTransitionEnd={() => {
         if (animationStatus === 'closing') {
           setAnimationStatus('closed')

@@ -3,10 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build:styles": "npx tailwindcss-cli@latest build src/styles/tailwind.css -o src/styles/index.css",
-    "predev": "npm run build:styles",
     "dev": "next dev",
-    "prebuild": "NODE_ENV=production npm run build:styles",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
