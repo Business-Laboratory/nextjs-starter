@@ -1,6 +1,5 @@
 import type { AppProps } from 'next/app'
-
-import '../styles/index.css'
+import { GlobalStyles } from 'twin.macro'
 
 type ComponentWithPageLayout = {
   Component: AppProps['Component'] & {
@@ -15,9 +14,12 @@ function App({ Component, pageProps }: AppProps & ComponentWithPageLayout) {
     (({ children }: { children: React.ReactNode }) => <>{children}</>)
 
   return (
-    <PageLayout>
-      <Component {...pageProps} />
-    </PageLayout>
+    <>
+      <GlobalStyles />
+      <PageLayout>
+        <Component {...pageProps} />
+      </PageLayout>
+    </>
   )
 }
 
