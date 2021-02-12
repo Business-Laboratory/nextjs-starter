@@ -1,7 +1,7 @@
 import tw, { css } from 'twin.macro'
 import Head from 'next/head'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Home() {
   const [showSidebar, setShowSidebar] = useState(false)
@@ -31,60 +31,18 @@ export default function Home() {
       <div tw="flex flex-row flex-1 overflow-hidden">
         <Sidebar showSidebar={showSidebar}>
           <div tw="pt-2 pl-4 space-y-8 text-gray-yellow-300 bl-text-xl">
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
+            {Array.from({ length: 20 }).map((_, idx) => (
+              <p key={idx}>Sidebar content</p>
+            ))}
           </div>
         </Sidebar>
 
         <Main>
           <article>
             <section tw="pt-2 pl-4 space-y-8 text-gray-yellow-600 bl-text-lg">
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
-              <p>Content</p>
+              {Array.from({ length: 20 }).map((_, idx) => (
+                <p key={idx}>Content</p>
+              ))}
             </section>
           </article>
           <Footer tw="text-gray-yellow-600 bl-text-base">
@@ -170,12 +128,20 @@ type SidebarProps = {
 }
 type AnimationStatus = 'closing' | 'closed' | 'open'
 function Sidebar({ showSidebar, className, children }: SidebarProps) {
+  const previousShowSidebar = useRef(showSidebar)
   const [animationStatus, setAnimationStatus] = useState<AnimationStatus>(() =>
     showSidebar ? 'open' : 'closed'
   )
 
   useEffect(() => {
-    setAnimationStatus(showSidebar ? 'open' : 'closing')
+    if (!previousShowSidebar.current && showSidebar) {
+      setAnimationStatus('open')
+    }
+    if (previousShowSidebar.current && !showSidebar) {
+      setAnimationStatus('closing')
+    }
+
+    previousShowSidebar.current = showSidebar
   }, [showSidebar])
 
   return (
@@ -195,7 +161,7 @@ function Sidebar({ showSidebar, className, children }: SidebarProps) {
         }
       }}
     >
-      {children}
+      {animationStatus === 'closed' ? null : children}
     </aside>
   )
 }
