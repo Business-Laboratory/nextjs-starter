@@ -8,17 +8,19 @@ type ComponentWithPageLayout = {
 }
 
 function App({ Component, pageProps }: AppProps & ComponentWithPageLayout) {
-  // get a page root if one was set
-  const PageLayout =
-    Component.PageLayout ||
-    (({ children }: { children: React.ReactNode }) => <>{children}</>)
-
   return (
     <>
       <GlobalStyles />
-      <PageLayout>
-        <Component {...pageProps} />
-      </PageLayout>
+      {
+        // get a page root if one was set
+        Component.PageLayout ? (
+          <Component.PageLayout>
+            <Component {...pageProps} />
+          </Component.PageLayout>
+        ) : (
+          <Component {...pageProps} />
+        )
+      }
     </>
   )
 }
