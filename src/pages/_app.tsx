@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 import { GlobalStyles } from 'twin.macro'
+import '../styles/fontFaces.css'
 
 type ComponentWithPageLayout = {
   Component: AppProps['Component'] & {
