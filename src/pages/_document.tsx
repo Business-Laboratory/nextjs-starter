@@ -58,10 +58,26 @@ class MyDocument extends Document {
             type="font/woff2"
             crossOrigin=""
           />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap"
-            rel="stylesheet"
+            rel="preload"
+            href="/fonts/Work_Sans/work-sans-v9-latin-300.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Work_Sans/work-sans-v9-latin-regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Work_Sans/work-sans-v9-latin-500.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin=""
           />
         </Head>
         <body>
