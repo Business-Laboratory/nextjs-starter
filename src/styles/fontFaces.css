@@ -1,4 +1,5 @@
-/*Generated from here: https://google-webfonts-helper.herokuapp.com/fonts/poppins?subsets=latin*/
+/* @font-face and Poppin's woff2 files generated from https://google-webfonts-helper.herokuapp.com/fonts */
+/* Poppins is not a variable font */
 
 /* poppins-200 - latin */
 @font-face {
@@ -7,8 +8,7 @@
   font-weight: 200;
   font-display: optional;
   src: local(''),
-       url('/fonts/Poppins/poppins-v15-latin-200.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/fonts/Poppins/poppins-v15-latin-200.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('/fonts/Poppins/poppins-v15-latin-200.woff2') format('woff2');
 }
 /* poppins-300 - latin */
 @font-face {
@@ -17,8 +17,7 @@
   font-weight: 300;
   font-display: optional;
   src: local(''),
-       url('/fonts/Poppins/poppins-v15-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/fonts/Poppins/poppins-v15-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('/fonts/Poppins/poppins-v15-latin-300.woff2') format('woff2');
 }
 /* poppins-regular - latin */
 @font-face {
@@ -27,8 +26,7 @@
   font-weight: 400;
   font-display: optional;
   src: local(''),
-       url('/fonts/Poppins/poppins-v15-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/fonts/Poppins/poppins-v15-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('/fonts/Poppins/poppins-v15-latin-regular.woff2') format('woff2');
 }
 /* poppins-500 - latin */
 @font-face {
@@ -37,8 +35,7 @@
   font-weight: 500;
   font-display: optional;
   src: local(''),
-       url('/fonts/Poppins/poppins-v15-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/fonts/Poppins/poppins-v15-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('/fonts/Poppins/poppins-v15-latin-500.woff2') format('woff2');
 }
 /* poppins-600 - latin */
 @font-face {
@@ -47,8 +44,7 @@
   font-weight: 600;
   font-display: optional;
   src: local(''),
-       url('/fonts/Poppins/poppins-v15-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/fonts/Poppins/poppins-v15-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('/fonts/Poppins/poppins-v15-latin-600.woff2') format('woff2');
 }
 /* poppins-700 - latin */
 @font-face {
@@ -57,15 +53,14 @@
   font-weight: 700;
   font-display: optional;
   src: local(''),
-       url('/fonts/Poppins/poppins-v15-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/fonts/Poppins/poppins-v15-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('/fonts/Poppins/poppins-v15-latin-700.woff2') format('woff2');
 }
 
 /*
   1. Download variable font ttf file from Google https://fonts.google.com/specimen/Work+Sans?query=work+sa&preview.text_type=custom 
   2. Use glyphhanger to subset the variable file https://www.npmjs.com/package/glyphhanger 
   3. Because I can't get brotli to work, I have to take the subset ttf file produced by glyphhanger 
-    and compress it to a woff2 with https://github.com/google/woff2, which I only was able to get to work with `brew install woff2`
+    and compress it to a woff2 with https://github.com/google/woff2, which I was only able to get to work with `brew install woff2`
 */
 /* work-sans-variable - subset */
 @font-face {
@@ -74,8 +69,16 @@
   font-weight: 300 500;
   font-display: optional;
   src: local(''),
-      url('/fonts/Work_Sans/work-sans-variableFont_wght-subset.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url('/fonts/Work_Sans/work-sans-variableFont_wght-subset.zopfli.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      url('/fonts/Work_Sans/work-sans-variableFont_wght-subset.woff2') format('woff2 supports variations'),
+      url('/fonts/Work_Sans/work-sans-variableFont_wght-subset.woff2') format('woff2-variations');
        
 }
-/*TODO handle browsers and systems that don't allow variable fonts*/
+/* 
+We can add italics for Work Sans, but based on how Google generates the variable files, this would be a separate file.
+I don't see a need to add it, as we currently aren't using italics.
+*/
+
+/*
+All modern browsers support variable fonts, so for now I'm not adding a static font alternative for Work Sans. 
+https://caniuse.com/variable-fonts
+*/
