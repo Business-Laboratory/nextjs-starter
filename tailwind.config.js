@@ -168,7 +168,7 @@ function blTextUtilities({ addUtilities, theme, variants }) {
     },
     '.bl-text-lg': {
       fontSize: '1.125rem',
-      fontWeight: '500',
+      fontWeight: '450',
       fontFamily: theme('fontFamily.body'),
       lineHeight: '1.5',
       letterSpacing: '0.04em',
