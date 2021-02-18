@@ -174,17 +174,24 @@
 @font-face {
   font-family: 'Work Sans';
   font-style: normal;
-  font-weight: 300 500;
+  font-weight: 100 900;
   font-display: optional;
   src: local(''),
       url('/fonts/Work_Sans/work-sans-variableFont_wght-subset.woff2') format('woff2 supports variations'),
       url('/fonts/Work_Sans/work-sans-variableFont_wght-subset.woff2') format('woff2-variations');
        
 }
-/* 
-We can add italics for Work Sans, but based on how Google generates the variable files, this would be a separate file.
-I don't see a need to add it, as we currently aren't using italics.
-*/
+/* work-sans-italic-variable - subset */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: optional;
+  src: local(''),
+      url('/fonts/Work_Sans/work-sans-italic-variableFont_wght-subset.woff2') format('woff2 supports variations'),
+      url('/fonts/Work_Sans/work-sans-italic-variableFont_wght-subset.woff2') format('woff2-variations');
+       
+}
 
 /*
 All modern browsers support variable fonts, so for now I'm not adding a static font alternative for Work Sans. 

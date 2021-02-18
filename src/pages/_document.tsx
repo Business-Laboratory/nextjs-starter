@@ -137,6 +137,12 @@ class MyDocument extends Document {
             type="font/woff2"
             crossOrigin=""
           />
+          <link
+            href="/fonts/Work_Sans/work-sans-italic-variableFont_wght-subset.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin=""
+          />
         </Head>
         <body>
           <Main />
