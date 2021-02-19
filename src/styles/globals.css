@@ -193,7 +193,18 @@
        
 }
 
+/* .icon {
+  font-family: "Anicons Regular", sans-serif;
+  font-size: 20rem; 
+  font-variation-settings: "TIME" 1;
+  transition: font-variation-settings 0.4s ease;
+} */
+.icon:focus {
+  font-variation-settings: "TIME" 100;
+}
+
 /*
 All modern browsers support variable fonts, so for now I'm not adding a static font alternative for Work Sans. 
 https://caniuse.com/variable-fonts
 */
+

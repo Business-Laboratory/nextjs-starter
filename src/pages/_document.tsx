@@ -143,6 +143,10 @@ class MyDocument extends Document {
             type="font/woff2"
             crossOrigin=""
           />
+          <link
+            href="https://res.cloudinary.com/dr6lvwubh/raw/upload/v1581441981/Anicons/anicons-regular.css"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />
