@@ -144,6 +144,7 @@ class MyDocument extends Document {
             crossOrigin=""
           />
           <link
+            rel="preload"
             href="/fonts/Anicons/AniconsGX.woff2"
             as="font"
             type="font/woff2"
