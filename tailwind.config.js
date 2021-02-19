@@ -37,6 +37,7 @@ module.exports = {
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
       '"Noto Color Emoji"',],
+      icon: ['"Anicons Regular"', 'sans-serif',]
     },
     screens: { sm, md, lg },
     // we often work svgs, so these are useful

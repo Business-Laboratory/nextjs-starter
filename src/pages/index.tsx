@@ -14,14 +14,11 @@ export default function Home() {
 
       <Header>
         <button
-          tw="ml-2"
           onClick={() => setShowSidebar((prev) => !prev)}
           aria-label={showSidebar ? 'Close sidebar' : 'Open sidebar'}
           css={[
-            tw`text-gray-yellow-100`,
+            tw`ml-2 text-gray-yellow-100 font-icon text-2xl`,
             css`
-              font-family: 'Anicons Regular', sans-serif;
-              font-size: 1.5rem;
               font-variation-settings: 'TIME' 1;
               transition: font-variation-settings 0.4s ease;
             `,

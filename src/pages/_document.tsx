@@ -144,8 +144,10 @@ class MyDocument extends Document {
             crossOrigin=""
           />
           <link
-            href="https://res.cloudinary.com/dr6lvwubh/raw/upload/v1581441981/Anicons/anicons-regular.css"
-            rel="stylesheet"
+            href="/fonts/Anicons/AniconsGX.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin=""
           />
         </Head>
         <body>

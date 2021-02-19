@@ -192,15 +192,14 @@
       url('/fonts/Work_Sans/work-sans-italic-variableFont_wght-subset.woff2') format('woff2-variations');
        
 }
-
-/* .icon {
-  font-family: "Anicons Regular", sans-serif;
-  font-size: 20rem; 
-  font-variation-settings: "TIME" 1;
-  transition: font-variation-settings 0.4s ease;
-} */
-.icon:focus {
-  font-variation-settings: "TIME" 100;
+/* Icons built from variable font  */
+/* Documentation for how to use the icon font Anicon https://typogram.github.io/Anicons/use.html */
+@font-face {
+  font-family: 'Anicons Regular';
+  src: local(''),
+      url('/fonts/Anicons/AniconsGX.woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /*
