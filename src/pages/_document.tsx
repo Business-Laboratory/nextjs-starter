@@ -17,6 +17,13 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link
+            rel="preload"
+            href="/fonts/Anicons/AniconsGX.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin=""
+          />
+          <link
             href="/fonts/Poppins/poppins-v15-latin-100.woff2"
             as="font"
             type="font/woff2"
@@ -29,7 +36,6 @@ class MyDocument extends Document {
             crossOrigin=""
           />
           <link
-            rel="preload"
             href="/fonts/Poppins/poppins-v15-latin-200.woff2"
             as="font"
             type="font/woff2"
@@ -42,7 +48,6 @@ class MyDocument extends Document {
             crossOrigin=""
           />
           <link
-            rel="preload"
             href="/fonts/Poppins/poppins-v15-latin-300.woff2"
             as="font"
             type="font/woff2"
@@ -55,7 +60,6 @@ class MyDocument extends Document {
             crossOrigin=""
           />
           <link
-            rel="preload"
             href="/fonts/Poppins/poppins-v15-latin-regular.woff2"
             as="font"
             type="font/woff2"
@@ -68,7 +72,6 @@ class MyDocument extends Document {
             crossOrigin=""
           />
           <link
-            rel="preload"
             href="/fonts/Poppins/poppins-v15-latin-500.woff2"
             as="font"
             type="font/woff2"
@@ -81,7 +84,6 @@ class MyDocument extends Document {
             crossOrigin=""
           />
           <link
-            rel="preload"
             href="/fonts/Poppins/poppins-v15-latin-600.woff2"
             as="font"
             type="font/woff2"

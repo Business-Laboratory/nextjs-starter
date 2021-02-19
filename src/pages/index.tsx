@@ -13,12 +13,23 @@ export default function Home() {
       </Head>
 
       <Header>
-        <button tw="ml-2" onClick={() => setShowSidebar((prev) => !prev)}>
-          {showSidebar ? (
-            <CloseIcon aria-label="Close sidebar" />
-          ) : (
-            <HamburgerIcon aria-label="Open sidebar" />
-          )}
+        <button
+          onClick={() => setShowSidebar((prev) => !prev)}
+          aria-label={showSidebar ? 'Close sidebar' : 'Open sidebar'}
+          css={[
+            tw`w-6 h-8 ml-2 text-2xl text-gray-yellow-100 font-icon`,
+            css`
+              font-variation-settings: 'TIME' 1;
+              transition: font-variation-settings 0.4s ease;
+            `,
+            showSidebar
+              ? css`
+                  font-variation-settings: 'TIME' 100;
+                `
+              : null,
+          ]}
+        >
+          A
         </button>
         <Link href="/">
           <a tw="ml-2 text-2xl font-bold font-display text-gray-yellow-100">
@@ -36,7 +47,6 @@ export default function Home() {
             ))}
           </div>
         </Sidebar>
-
         <Main>
           <article>
             <section tw="pt-2 pl-4 space-y-8 text-gray-yellow-600 bl-text-lg">
