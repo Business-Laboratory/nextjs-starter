@@ -17,7 +17,7 @@ export default function Home() {
           onClick={() => setShowSidebar((prev) => !prev)}
           aria-label={showSidebar ? 'Close sidebar' : 'Open sidebar'}
           css={[
-            tw`ml-2 text-gray-yellow-100 font-icon text-2xl`,
+            tw`w-6 h-8 ml-2 text-2xl text-gray-yellow-100 font-icon`,
             css`
               font-variation-settings: 'TIME' 1;
               transition: font-variation-settings 0.4s ease;
