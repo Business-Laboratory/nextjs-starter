@@ -10,7 +10,7 @@ export default function Home() {
     <div tw="flex flex-col h-screen bg-gray-yellow-100">
       <Head>
         <title>Layout examples</title>
-             </Head>
+      </Head>
 
       <Header>
         <button
