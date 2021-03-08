@@ -31,7 +31,7 @@ export default function Home() {
         >
           A
         </button>
-        <Link href="/">
+        <Link href="/" passHref>
           <a tw="ml-2 text-2xl font-bold font-display text-gray-yellow-100">
             Home
           </a>
