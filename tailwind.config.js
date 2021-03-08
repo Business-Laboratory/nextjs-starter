@@ -53,7 +53,6 @@ module.exports = {
     }),
     // look up all default values here: https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js
     extend: {
-      width: { sm, md, lg },
       minWidth: (theme) => ({
         auto: 'auto',
         ...theme('spacing'),
