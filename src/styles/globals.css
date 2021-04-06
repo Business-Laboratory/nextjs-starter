@@ -1,3 +1,8 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
 /* @font-face and Poppin's woff2 files generated from https://google-webfonts-helper.herokuapp.com/fonts */
 /* Poppins is not a variable font */
 
