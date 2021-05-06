@@ -193,7 +193,7 @@ function blTextUtilities({ addUtilities, theme, variants }) {
     },
     '.bl-text-xs': {
       fontSize: '.75rem',
-      fontWeight: '400',
+      fontWeight: '500',
       fontFamily: theme('fontFamily.body'),
       lineHeight: '1.5',
       letterSpacing: '0.01em',
